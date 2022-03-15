@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8] {inputenc}
+
+\usepackage[brazil] {babel}
+
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+
+\usepackage[acronym, toc]{glossaries}
+
+\usepackage{imakeidx}
+
+\usepackage{csquotes}
+
+\usepackage[
+style=bwl-FU,
+sorting=ynt
+]{biblatex}
+\addbibresource{./components/references/referencias.bib}
+
+
+\def\docUniversity{UNIVERSIDADE} % Author
+\def\docAuthor{NOME DO AUTOR} % Author
+\def\docAdvisor{NOME DO ORIENTADOR} % Orientador
+\def\docTitle{TITULO DO TCC} % title
+\def\docDate{Cidade\\2022} % date
+
+\author{\docAuthor}
+\title{\docTitle}
+\date{\docDate}
+
+
+\include{components/glossario/glossarioItems.tex}
+
+\makeindex[title=Índice, intoc]
+
+
+\begin{document}
+
+    \include{./components/capa/capa.tex}
+
+    % FOLHA DE ROSTO
+
+    % ERRATA
+
+    % DEDICATÓRIA
+
+    % AGRADECIMENTOS
+
+    % EPÍGRAFE
+
+    % RESUMO
+    \include{./components/resumo/resumo.tex}
+
+    % ABSTRACT
+    \include{./components/abstract/abstract.tex}
+
+    % LISTA DE ILUSTRAÇÕES
+    \include{components/ilustracoes/listaIlustracoes.tex}
+
+    % LISTA DE TABELAS
+    \include{components/tabelas/listaTabelas.tex}
+
+    % SUMÁRIO
+    \include{./components/sumario/sumario.tex}
+
+    % ELEMENTOS TEXTUAIS
+    \pagenumbering{arabic}
+
+    %% Introdução
+    \include{components/introducao/introducao.tex}
+
+    %% Desenvolvimento
+    \include{components/desenvolvimento/desenvolvimento.tex}
+
+    %% Conclusão
+    \include{components/conclusao/conclusao.tex}
+
+    % REFERÊNCIAS
+    \newpage
+    \printbibliography[
+        heading=bibintoc,
+        title={Bibliografia}
+    ]
+
+    % GLOSSÁRIO
+    \include{components/glossario/glossarios.tex}
+
+    % APÊNDICE
+    % \include{components/apendice/apendice.tex}
+
+    % ÍNDICE
+    \printindex
+    
+\end{document}
